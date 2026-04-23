@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>遠藤ファームさんへのご提案｜Rion &amp; Co.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --green:#4A6B3F;
+  --green-dk:#2C4A21;
+  --green-lt:#7A9D6A;
+  --cream:#FBF9F2;
+  --cream-2:#F2EDDF;
+  --gold:#C49A4A;
+  --gold-lt:#E0BF7B;
+  --sun:#F5B82E;
+  --ink:#1F2A1A;
+  --ink-2:#4A5742;
+  --muted:#857C6E;
+  --line:rgba(31,42,26,0.12);
+  --line-soft:rgba(31,42,26,0.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.serif{font-family:'Noto Serif JP', serif}
+.eng{font-family:'Cormorant Garamond', serif;font-style:italic;letter-spacing:0.05em}
+
+/* Slide layout */
+.slide{
+  min-height:100vh;
+  padding:80px 32px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+.slide-inner{max-width:1080px;width:100%;position:relative;z-index:2}
+.slide-num{
+  position:absolute;top:30px;right:40px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px;color:var(--muted);letter-spacing:0.2em;
+}
+.slide-tag{
+  display:inline-block;font-size:11px;font-weight:700;
+  letter-spacing:0.4em;text-transform:uppercase;
+  color:var(--green);background:rgba(74,107,63,0.08);
+  padding:7px 16px;border-radius:2px;margin-bottom:24px;
+}
+
+/* COVER */
+.s-cover{
+  background:
+    radial-gradient(circle at 20% 20%, rgba(245,184,46,0.15), transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(74,107,63,0.18), transparent 50%),
+    var(--cream);
+  text-align:center;
+}
+.s-cover .label{
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--green);font-size:20px;letter-spacing:0.4em;margin-bottom:18px;
+}
+.s-cover h1{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:clamp(40px, 6vw, 70px);
+  color:var(--green-dk);line-height:1.4;letter-spacing:0.04em;
+  margin-bottom:30px;
+}
+.s-cover h1 .accent{color:var(--gold)}
+.s-cover .from{
+  display:inline-flex;align-items:center;gap:14px;
+  font-size:14px;color:var(--ink-2);
+  background:var(--cream-2);
+  padding:14px 26px;border-radius:4px;
+  border-left:3px solid var(--gold);
+  letter-spacing:0.05em;
+}
+.s-cover .from strong{color:var(--green-dk);font-weight:700}
+.s-cover .deco{
+  position:absolute;font-family:'Noto Serif JP', serif;
+  font-size:240px;color:rgba(74,107,63,0.06);font-weight:300;
+  line-height:1;
+}
+.s-cover .deco-1{top:8%;left:-3%}
+.s-cover .deco-2{bottom:5%;right:-2%}
+
+/* Section title */
+.sec-eyebrow{
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--gold);font-size:18px;letter-spacing:0.3em;margin-bottom:14px;
+}
+.sec-title{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:clamp(28px, 4.5vw, 44px);
+  color:var(--green-dk);line-height:1.45;
+  margin-bottom:24px;letter-spacing:0.04em;
+}
+.sec-title .accent{color:var(--gold)}
+.sec-desc{font-size:15px;color:var(--ink-2);max-width:680px;margin-bottom:36px;line-height:2.1}
+
+/* GREETING */
+.s-hello{background:var(--cream)}
+.s-hello .greeting-card{
+  background:#fff;
+  border:1px solid var(--line-soft);
+  padding:50px 48px;border-radius:6px;
+  box-shadow:0 20px 50px rgba(31,42,26,0.06);
+}
+.s-hello p{font-size:15.5px;color:var(--ink-2);margin-bottom:18px;line-height:2.1}
+.s-hello p strong{color:var(--green-dk);font-weight:700}
+.s-hello .sign{
+  margin-top:30px;padding-top:24px;
+  border-top:1px solid var(--line-soft);
+  font-size:14px;color:var(--muted);
+}
+.s-hello .sign-name{
+  font-family:'Noto Serif JP', serif;font-size:17px;
+  color:var(--green-dk);font-weight:600;
+  margin-top:6px;letter-spacing:0.05em;
+}
+
+/* CURRENT - 2col */
+.s-current{background:var(--cream-2)}
+.cur-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+.cur-card{
+  background:#fff;
+  padding:30px 28px;border-radius:4px;
+  border-top:3px solid var(--green);
+}
+.cur-card.shine{border-top-color:var(--gold)}
+.cur-card-label{
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--gold);font-size:13px;letter-spacing:0.25em;margin-bottom:8px;
+}
+.cur-card.shine .cur-card-label{color:var(--green)}
+.cur-card h4{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:18px;color:var(--green-dk);margin-bottom:14px;letter-spacing:0.04em;
+}
+.cur-card ul{list-style:none;padding:0}
+.cur-card li{
+  font-size:14px;color:var(--ink-2);
+  padding:8px 0 8px 22px;position:relative;line-height:1.85;
+}
+.cur-card li::before{
+  content:'';position:absolute;left:0;top:14px;
+  width:8px;height:8px;border-radius:50%;
+  background:var(--green-lt);
+}
+.cur-card.shine li::before{background:var(--gold)}
+@media(max-width:768px){.cur-grid{grid-template-columns:1fr}}
+
+/* PROPOSAL OVERVIEW - 5 areas */
+.s-overview{background:var(--cream)}
+.areas{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:20px;margin-top:30px;
+}
+.area{
+  background:#fff;
+  padding:28px 24px;border-radius:6px;
+  border:1px solid var(--line-soft);
+  transition:transform .3s, box-shadow .3s;
+}
+.area:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,42,26,0.08)}
+.area-num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:36px;color:var(--gold);font-weight:600;line-height:1;
+  margin-bottom:10px;
+}
+.area h4{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:16.5px;color:var(--green-dk);
+  margin-bottom:10px;letter-spacing:0.03em;
+}
+.area p{font-size:13.5px;color:var(--ink-2);line-height:1.85}
+@media(max-width:900px){.areas{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.areas{grid-template-columns:1fr}}
+
+/* DETAIL slide */
+.detail-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:50px;align-items:start;margin-top:40px;
+}
+.detail-img{
+  aspect-ratio:4/3;border-radius:6px;overflow:hidden;
+  background:linear-gradient(135deg, var(--green), var(--green-dk));
+  position:relative;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);
+}
+.detail-img-icon{
+  font-family:'Noto Serif JP', serif;font-weight:300;
+  color:rgba(245,184,46,0.6);font-size:120px;line-height:1;
+}
+.detail-img-tag{
+  position:absolute;left:20px;bottom:18px;
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--gold-lt);font-size:13px;letter-spacing:0.2em;
+}
+.detail-content h3{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:24px;color:var(--green-dk);margin-bottom:18px;line-height:1.5;letter-spacing:0.04em;
+}
+.detail-content p{font-size:14.5px;color:var(--ink-2);line-height:2;margin-bottom:18px}
+.detail-list{
+  background:var(--cream-2);
+  padding:20px 24px;border-radius:4px;
+  border-left:3px solid var(--green);
+  margin-top:14px;
+}
+.detail-list-title{
+  font-size:11px;color:var(--green);font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;
+}
+.detail-list ul{list-style:none}
+.detail-list li{
+  font-size:13.5px;color:var(--ink);
+  padding:5px 0 5px 18px;position:relative;
+}
+.detail-list li::before{
+  content:'✓';position:absolute;left:0;top:5px;
+  color:var(--gold);font-weight:700;
+}
+@media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:30px}.detail-img{max-width:380px;margin:0 auto;aspect-ratio:1/1}}
+
+/* PRICE */
+.s-price{background:var(--cream-2)}
+.price-card{
+  background:#fff;
+  padding:50px 40px;border-radius:6px;text-align:center;
+  border:2px solid var(--gold);
+  position:relative;margin-top:30px;
+}
+.price-card::before{
+  content:'家族特別価格';
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:#fff;
+  padding:5px 22px;font-size:11px;letter-spacing:0.3em;font-weight:700;
+}
+.price-eyebrow{
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--gold);font-size:20px;letter-spacing:0.3em;margin-bottom:18px;
+}
+.price-title{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:24px;color:var(--green-dk);margin-bottom:24px;letter-spacing:0.05em;
+}
+.price-tiers{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;text-align:left;
+}
+.tier{
+  background:var(--cream);
+  padding:24px 22px;border-radius:4px;
+  border:1px solid var(--line-soft);
+}
+.tier.featured{
+  background:linear-gradient(135deg, var(--green), var(--green-dk));color:#fff;
+  border:none;position:relative;
+}
+.tier.featured::before{
+  content:'★ おすすめ';position:absolute;top:-9px;right:14px;
+  background:var(--gold);color:#fff;
+  font-size:10px;font-weight:700;letter-spacing:0.15em;
+  padding:4px 10px;border-radius:2px;
+}
+.tier-name{
+  font-family:'Noto Serif JP', serif;font-weight:700;
+  font-size:17px;color:var(--green-dk);margin-bottom:8px;letter-spacing:0.04em;
+}
+.tier.featured .tier-name{color:var(--gold-lt)}
+.tier-price{
+  font-family:'Cormorant Garamond', serif;font-weight:600;
+  font-size:36px;color:var(--gold);line-height:1;margin-bottom:12px;
+}
+.tier.featured .tier-price{color:#fff}
+.tier-price .small{font-size:14px;color:var(--muted);font-family:'Noto Sans JP';font-weight:400;letter-spacing:0.05em}
+.tier.featured .tier-price .small{color:rgba(255,255,255,0.6)}
+.tier ul{list-style:none}
+.tier li{
+  font-size:13px;padding:6px 0 6px 20px;position:relative;
+  color:var(--ink-2);line-height:1.7;
+}
+.tier.featured li{color:rgba(255,255,255,0.92)}
+.tier li::before{
+  content:'✓';position:absolute;left:0;top:6px;color:var(--gold);font-weight:700;
+}
+.tier.featured li::before{color:var(--gold-lt)}
+@media(max-width:768px){.price-tiers{grid-template-columns:1fr}}
+
+/* WHY */
+.s-why{background:var(--cream)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+.why{
+  background:#fff;
+  padding:30px 26px;border-radius:6px;
+  border:1px solid var(--line-soft);
+}
+.why-icon{
+  width:54px;height:54px;border-radius:50%;
+  background:var(--green);color:var(--gold-lt);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Serif JP', serif;font-weight:600;font-size:22px;
+  margin-bottom:18px;
+}
+.why h4{
+  font-family:'Noto Serif JP', serif;font-weight:600;
+  font-size:17px;color:var(--green-dk);margin-bottom:10px;letter-spacing:0.04em;
+}
+.why p{font-size:13.5px;color:var(--ink-2);line-height:1.95}
+@media(max-width:900px){.why-grid{grid-template-columns:1fr}}
+
+/* CLOSE */
+.s-close{
+  background:
+    radial-gradient(circle at 30% 30%, rgba(245,184,46,0.12), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(74,107,63,0.15), transparent 50%),
+    var(--cream-2);
+  text-align:center;
+}
+.s-close .close-eyebrow{
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--gold);font-size:22px;letter-spacing:0.3em;margin-bottom:20px;
+}
+.s-close h2{
+  font-family:'Noto Serif JP', serif;font-weight:500;
+  font-size:clamp(28px, 4.2vw, 42px);
+  color:var(--green-dk);line-height:1.6;margin-bottom:30px;letter-spacing:0.05em;
+}
+.s-close h2 .accent{color:var(--gold);font-weight:700}
+.s-close p{font-size:15.5px;color:var(--ink-2);max-width:680px;margin:0 auto 30px;line-height:2.1}
+.next-steps{
+  background:#fff;
+  padding:36px 32px;border-radius:6px;
+  max-width:680px;margin:30px auto 0;text-align:left;
+  border:1px solid var(--line-soft);
+}
+.next-steps h4{
+  font-family:'Noto Serif JP', serif;font-weight:700;
+  font-size:18px;color:var(--green-dk);margin-bottom:18px;letter-spacing:0.04em;
+}
+.next-steps ol{list-style:none;counter-reset:step;display:flex;flex-direction:column;gap:14px}
+.next-steps li{
+  display:flex;gap:16px;align-items:flex-start;
+  counter-increment:step;
+  font-size:14.5px;color:var(--ink-2);line-height:1.85;
+}
+.next-steps li::before{
+  content:counter(step);
+  flex-shrink:0;width:32px;height:32px;border-radius:50%;
+  background:var(--gold);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond', serif;font-weight:600;font-size:16px;
+}
+.signoff{
+  margin-top:50px;font-family:'Cormorant Garamond', serif;font-style:italic;
+  font-size:24px;color:var(--green-dk);letter-spacing:0.15em;
+}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease, transform .9s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  font-size:13px;color:var(--muted);letter-spacing:0.2em;
+}
+.scroll-hint::after{
+  content:'';display:block;width:1px;height:30px;
+  background:var(--green);margin:8px auto 0;
+  animation:scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine{
+  0%,100%{transform:scaleY(0.4);opacity:0.3}
+  50%{transform:scaleY(1);opacity:1}
+}
+
+@media(max-width:768px){.slide{padding:60px 22px}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="slide s-cover">
+  <div class="deco deco-1 serif">遠</div>
+  <div class="deco deco-2 serif">藤</div>
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 01 / 08 —</div>
+    <div class="label">— A Proposal for —</div>
+    <h1>遠藤ファームさんに、<br /><span class="accent">私たちが出来ること。</span></h1>
+    <div class="from">
+      <span>From</span>
+      <strong>Rion &amp; Co.（須賀井ひかる）</strong>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll Down</div>
+</section>
+
+<!-- GREETING -->
+<section class="slide s-hello">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 02 / 08 —</div>
+    <div class="slide-tag">Hello</div>
+    <h2 class="sec-title">はじめに、<span class="accent">ご挨拶を。</span></h2>
+    <div class="greeting-card">
+      <p>遠藤さん、ご無沙汰しております。<strong>須賀井ひかる</strong>です。</p>
+      <p>このたび、AIを活用したWeb制作・業務効率化のフリーランス事業（屋号：<strong>Rion &amp; Co.</strong>）を立ち上げました。</p>
+      <p>ホームページを拝見し、「未来型ハイブリッド循環型農法」というブランディング、ひまわり畑の集客、蜂蜜・野菜の販売、そして撮影ロケ地としての活用まで——<strong>幅広く挑戦されている姿勢に、大きな魅力</strong>を感じています。</p>
+      <p>同時に、<strong>農作業と販促・運営の両立は、本当に大変なはず</strong>です。本業に集中していただけるよう、私たちのスキルでお手伝いできることがあるのではと思い、ご提案をまとめました。</p>
+      <p>もちろん、お時間のある時にざっと目を通していただければ十分です。「いいかも」と思える部分があれば、ぜひお気軽にお声がけください。</p>
+      <div class="sign">
+        — 親戚として、Rion &amp; Co. として、誠意を込めて
+        <div class="sign-name">須賀井 ひかる</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENT -->
+<section class="slide s-current">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 03 / 08 —</div>
+    <div class="slide-tag">Observation</div>
+    <h2 class="sec-title">遠藤ファームさんの<br /><span class="accent">"今"を拝見して。</span></h2>
+    <p class="sec-desc">ホームページとSNSを丁寧に拝見しました。素晴らしい点と、もう少し伸ばせそうな点が見えてきました。</p>
+
+    <div class="cur-grid">
+      <div class="cur-card shine">
+        <div class="cur-card-label">— Strengths</div>
+        <h4>素晴らしい点</h4>
+        <ul>
+          <li>「未来型ハイブリッド循環型農法」という独自ブランド</li>
+          <li>ねぎ・大和芋・ごぼう・蜂蜜と多角的な商品ライン</li>
+          <li>ひまわり畑による集客＆撮影ロケ事業</li>
+          <li>Instagram / X / Facebook の3チャネル運用済み</li>
+          <li>EC（theshop.jp）・ポケットマルシェ出店済み</li>
+        </ul>
+      </div>
+      <div class="cur-card">
+        <div class="cur-card-label">— Opportunities</div>
+        <h4>もう少し伸ばせそうな点</h4>
+        <ul>
+          <li>HPがやや情報過多で、商品の魅力が伝わりにくい</li>
+          <li>商品ごとの専用ページ（LP）が無く、SNS流入の受け皿が弱い</li>
+          <li>ECの売上集計・在庫管理がおそらく手作業</li>
+          <li>ふるさと納税・楽天等の販路がまだ未開拓</li>
+          <li>ひまわり畑シーズンの予約管理が電話のみ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="slide s-overview">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 04 / 08 —</div>
+    <div class="slide-tag">Proposal Areas</div>
+    <h2 class="sec-title">お手伝いできる、<br /><span class="accent">5つの分野。</span></h2>
+    <p class="sec-desc">どれか1つだけでも、複数組み合わせも、ご相談ベースで柔軟に対応できます。</p>
+
+    <div class="areas">
+      <div class="area">
+        <div class="area-num">01</div>
+        <h4>ホームページの<br />リニューアル</h4>
+        <p>商品の魅力が一目で伝わる、現代的でモバイル対応のサイトに刷新します。</p>
+      </div>
+      <div class="area">
+        <div class="area-num">02</div>
+        <h4>商品LP・<br />ECページ強化</h4>
+        <p>ねぎ・蜂蜜・ひまわり畑など、商品ごとの専用ページで購入率UP。</p>
+      </div>
+      <div class="area">
+        <div class="area-num">03</div>
+        <h4>業務の<br />Excel自動化</h4>
+        <p>注文集計・在庫管理・売上分析をAIで自動化。事務作業を大幅削減。</p>
+      </div>
+      <div class="area">
+        <div class="area-num">04</div>
+        <h4>新販路の<br />開拓支援</h4>
+        <p>ふるさと納税・楽天市場・Amazon出店の準備〜運用までサポート。</p>
+      </div>
+      <div class="area">
+        <div class="area-num">05</div>
+        <h4>SNS発信の<br />仕組み化</h4>
+        <p>AI活用で投稿テンプレ作成。続けやすい運用フローを設計します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL 1: HP -->
+<section class="slide" style="background:var(--cream)">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 05 / 08 —</div>
+    <div class="slide-tag">Detail · 01</div>
+    <h2 class="sec-title">ホームページの<span class="accent">リニューアル</span></h2>
+
+    <div class="detail-grid">
+      <div class="detail-img">
+        <div class="detail-img-icon">家</div>
+        <div class="detail-img-tag">— Web Renewal</div>
+      </div>
+      <div class="detail-content">
+        <h3>"伝わる" デザインで、<br />訪問者を顧客に変える。</h3>
+        <p>現状のホームページは情報がしっかり載っていますが、<strong>訪問者の最初の3秒で「ここで買いたい」と思わせる</strong>導線がやや弱い印象です。</p>
+        <p>商品写真を主役にした現代的なデザインへの刷新で、<strong>SNSからの流入も購入につなげる</strong>ことができます。</p>
+        <div class="detail-list">
+          <div class="detail-list-title">— 含まれる作業</div>
+          <ul>
+            <li>トップページの全面リデザイン</li>
+            <li>スマートフォン対応の最適化</li>
+            <li>商品紹介・ストーリーセクション追加</li>
+            <li>SNS・EC・ふるさと納税への動線設計</li>
+            <li>SEO基本設定・お問い合わせフォーム改善</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL 2: 業務効率化 -->
+<section class="slide" style="background:var(--cream-2)">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 06 / 08 —</div>
+    <div class="slide-tag">Detail · 02</div>
+    <h2 class="sec-title">業務の<span class="accent">Excel自動化</span></h2>
+
+    <div class="detail-grid">
+      <div class="detail-img" style="background:linear-gradient(135deg, var(--gold-lt), var(--gold));">
+        <div class="detail-img-icon" style="color:rgba(255,255,255,0.7)">効</div>
+        <div class="detail-img-tag" style="color:#fff">— Automation</div>
+      </div>
+      <div class="detail-content">
+        <h3>事務作業に時間を使わず、<br />農作業に集中していただくために。</h3>
+        <p>EC・ポケマル・卸など複数チャネルの注文を、毎日Excelに転記したり、在庫を手で調整したり——<strong>「あの作業、自動化できないかな」</strong>と思うことはありませんか？</p>
+        <p>AIを使えば、ボタン1つで集計・在庫更新・レポート作成が完了する仕組みを作れます。</p>
+        <div class="detail-list">
+          <div class="detail-list-title">— たとえば</div>
+          <ul>
+            <li>各販路の注文を自動集計するシート</li>
+            <li>在庫管理＋発注タイミング通知</li>
+            <li>月次売上レポート自動作成</li>
+            <li>顧客リストの整理＆リピート分析</li>
+            <li>請求書・納品書の自動発行</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICE -->
+<section class="slide s-price">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 07 / 08 —</div>
+    <div class="slide-tag">Price</div>
+    <h2 class="sec-title">料金は、<span class="accent">家族価格</span>で。</h2>
+    <p class="sec-desc">親戚として、まずは「役に立つこと」を最優先で。一般のお客様向け価格の半額以下で、最初の1案件から無料お試しまで対応します。</p>
+
+    <div class="price-card">
+      <div class="price-eyebrow">— Family Special —</div>
+      <div class="price-title">3つのプランから、お気軽に。</div>
+
+      <div class="price-tiers">
+        <div class="tier">
+          <div class="tier-name">お試し相談</div>
+          <div class="tier-price">¥0<br /><span class="small">/ 初回</span></div>
+          <ul>
+            <li>30〜60分の電話・LINE相談</li>
+            <li>「これ出来る？」の質問OK</li>
+            <li>方向性のご提案まで</li>
+            <li>断っていただいてOK</li>
+          </ul>
+        </div>
+        <div class="tier featured">
+          <div class="tier-name">単発お手伝い</div>
+          <div class="tier-price">¥10,000<span class="small">〜</span></div>
+          <ul>
+            <li>商品LP 1ページ制作</li>
+            <li>Excel自動化 1案件</li>
+            <li>ふるさと納税 出品サポート</li>
+            <li>納品まで全てお任せ</li>
+          </ul>
+        </div>
+        <div class="tier">
+          <div class="tier-name">継続サポート</div>
+          <div class="tier-price">¥30,000<span class="small">/月</span></div>
+          <ul>
+            <li>HPリニューアル＋運用</li>
+            <li>SNS投稿テンプレ作成</li>
+            <li>毎月の売上分析レポート</li>
+            <li>緊急対応も含む</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="slide s-why">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 08 / 08 —</div>
+    <div class="slide-tag">Why Us</div>
+    <h2 class="sec-title">私たちにお願いいただく、<br /><span class="accent">3つの理由。</span></h2>
+
+    <div class="why-grid">
+      <div class="why">
+        <div class="why-icon">族</div>
+        <h4>親戚だからこその<br />信頼感と気軽さ</h4>
+        <p>お互いを知っている関係だからこそ、無理な営業も押し付けもありません。「相談だけ」「お試しだけ」も歓迎です。</p>
+      </div>
+      <div class="why">
+        <div class="why-icon">速</div>
+        <h4>AIを活用した<br />圧倒的なスピード</h4>
+        <p>通常1週間以上かかる作業も、AIをフル活用して数日で納品。「あ、こんなに早く出来るんだ」という体験をお届けします。</p>
+      </div>
+      <div class="why">
+        <div class="why-icon">続</div>
+        <h4>長くお付き合い<br />できる距離感</h4>
+        <p>1回きりのお取引ではなく、季節ごとの繁忙期に合わせて柔軟にサポート。「ちょっと困った」をすぐ相談できる存在を目指します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="slide s-close">
+  <div class="slide-inner reveal">
+    <div class="close-eyebrow">— Closing —</div>
+    <h2>ご一読いただき、<br /><span class="accent">ありがとうございました。</span></h2>
+    <p>「ここの部分、もう少し詳しく知りたい」「うちの場合はどうなる？」など、どんな小さなことでも遠慮なくお聞きください。<br /><strong>まずは無料相談から、お気軽にどうぞ。</strong></p>
+
+    <div class="next-steps">
+      <h4>次の一歩について</h4>
+      <ol>
+        <li>このご提案をご一読いただく（今ここ）</li>
+        <li>気になる点・ご質問をLINE等でご連絡ください</li>
+        <li>30〜60分の無料相談（電話・LINE）でお話しさせてください</li>
+        <li>ご一緒に出来そうなら、まず1案件から始めましょう</li>
+      </ol>
+    </div>
+
+    <div class="signoff">— Rion &amp; Co. —</div>
+  </div>
+</section>
+
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
