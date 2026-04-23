@@ -17,6 +17,7 @@
   --gold:#C49A4A;
   --gold-lt:#E0BF7B;
   --sun:#F5B82E;
+  --sky:#5C8FB8;
   --ink:#1F2A1A;
   --ink-2:#4A5742;
   --muted:#857C6E;
@@ -42,8 +43,7 @@ a{color:inherit;text-decoration:none}
   min-height:100vh;
   padding:80px 32px;
   display:flex;align-items:center;justify-content:center;
-  position:relative;
-  overflow:hidden;
+  position:relative;overflow:hidden;
 }
 .slide-inner{max-width:1080px;width:100%;position:relative;z-index:2}
 .slide-num{
@@ -88,8 +88,7 @@ a{color:inherit;text-decoration:none}
 .s-cover .from strong{color:var(--green-dk);font-weight:700}
 .s-cover .deco{
   position:absolute;font-family:'Noto Serif JP', serif;
-  font-size:240px;color:rgba(74,107,63,0.06);font-weight:300;
-  line-height:1;
+  font-size:240px;color:rgba(74,107,63,0.06);font-weight:300;line-height:1;
 }
 .s-cover .deco-1{top:8%;left:-3%}
 .s-cover .deco-2{bottom:5%;right:-2%}
@@ -129,7 +128,7 @@ a{color:inherit;text-decoration:none}
   margin-top:6px;letter-spacing:0.05em;
 }
 
-/* CURRENT - 2col */
+/* OBSERVATION */
 .s-current{background:var(--cream-2)}
 .cur-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
 .cur-card{
@@ -160,32 +159,47 @@ a{color:inherit;text-decoration:none}
 .cur-card.shine li::before{background:var(--gold)}
 @media(max-width:768px){.cur-grid{grid-template-columns:1fr}}
 
-/* PROPOSAL OVERVIEW - 5 areas */
+/* OVERVIEW - 3 areas big cards */
 .s-overview{background:var(--cream)}
-.areas{
+.areas-3{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:20px;margin-top:30px;
+  gap:24px;margin-top:36px;
 }
-.area{
+.area-big{
   background:#fff;
-  padding:28px 24px;border-radius:6px;
+  padding:36px 30px;border-radius:8px;
   border:1px solid var(--line-soft);
-  transition:transform .3s, box-shadow .3s;
+  position:relative;overflow:hidden;
+  transition:transform .35s, box-shadow .35s;
 }
-.area:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(31,42,26,0.08)}
-.area-num{
+.area-big:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(31,42,26,0.1)}
+.area-big::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg, var(--green), var(--gold));
+}
+.area-big-num{
   font-family:'Cormorant Garamond', serif;
-  font-size:36px;color:var(--gold);font-weight:600;line-height:1;
-  margin-bottom:10px;
+  font-size:46px;color:var(--gold);font-weight:600;line-height:1;margin-bottom:14px;
 }
-.area h4{
+.area-big-icon{
+  width:54px;height:54px;border-radius:50%;
+  background:var(--green);color:var(--gold-lt);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Serif JP', serif;font-weight:600;font-size:22px;
+  margin-bottom:18px;
+}
+.area-big h4{
   font-family:'Noto Serif JP', serif;font-weight:600;
-  font-size:16.5px;color:var(--green-dk);
-  margin-bottom:10px;letter-spacing:0.03em;
+  font-size:19px;color:var(--green-dk);
+  margin-bottom:12px;letter-spacing:0.04em;line-height:1.5;
 }
-.area p{font-size:13.5px;color:var(--ink-2);line-height:1.85}
-@media(max-width:900px){.areas{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.areas{grid-template-columns:1fr}}
+.area-big p{font-size:13.5px;color:var(--ink-2);line-height:1.95;margin-bottom:14px}
+.area-big-tag{
+  display:inline-block;font-size:11px;color:var(--green);font-weight:700;
+  background:rgba(74,107,63,0.08);
+  padding:5px 12px;border-radius:3px;letter-spacing:0.1em;
+}
+@media(max-width:900px){.areas-3{grid-template-columns:1fr;gap:18px}}
 
 /* DETAIL slide */
 .detail-grid{
@@ -214,7 +228,7 @@ a{color:inherit;text-decoration:none}
 .detail-content p{font-size:14.5px;color:var(--ink-2);line-height:2;margin-bottom:18px}
 .detail-list{
   background:var(--cream-2);
-  padding:20px 24px;border-radius:4px;
+  padding:22px 26px;border-radius:4px;
   border-left:3px solid var(--green);
   margin-top:14px;
 }
@@ -225,13 +239,26 @@ a{color:inherit;text-decoration:none}
 .detail-list ul{list-style:none}
 .detail-list li{
   font-size:13.5px;color:var(--ink);
-  padding:5px 0 5px 18px;position:relative;
+  padding:6px 0 6px 20px;position:relative;line-height:1.7;
 }
 .detail-list li::before{
-  content:'✓';position:absolute;left:0;top:5px;
+  content:'✓';position:absolute;left:0;top:6px;
   color:var(--gold);font-weight:700;
 }
-@media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:30px}.detail-img{max-width:380px;margin:0 auto;aspect-ratio:1/1}}
+.example-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;
+}
+.example{
+  background:#fff;border:1px solid var(--line-soft);
+  padding:18px 20px;border-radius:4px;
+  font-size:13px;color:var(--ink-2);line-height:1.85;
+}
+.example-label{
+  font-family:'Cormorant Garamond', serif;font-style:italic;
+  color:var(--gold);font-size:12px;letter-spacing:0.2em;margin-bottom:6px;
+}
+.example strong{display:block;color:var(--green-dk);font-size:14.5px;font-weight:700;margin-bottom:4px;font-family:'Noto Serif JP', serif;}
+@media(max-width:900px){.detail-grid{grid-template-columns:1fr;gap:30px}.detail-img{max-width:380px;margin:0 auto;aspect-ratio:1/1}.example-row{grid-template-columns:1fr}}
 
 /* PRICE */
 .s-price{background:var(--cream-2)}
@@ -396,7 +423,7 @@ a{color:inherit;text-decoration:none}
   <div class="deco deco-1 serif">遠</div>
   <div class="deco deco-2 serif">藤</div>
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 01 / 08 —</div>
+    <div class="slide-num eng">— 01 / 09 —</div>
     <div class="label">— A Proposal for —</div>
     <h1>遠藤ファームさんに、<br /><span class="accent">私たちが出来ること。</span></h1>
     <div class="from">
@@ -410,14 +437,14 @@ a{color:inherit;text-decoration:none}
 <!-- GREETING -->
 <section class="slide s-hello">
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 02 / 08 —</div>
+    <div class="slide-num eng">— 02 / 09 —</div>
     <div class="slide-tag">Hello</div>
     <h2 class="sec-title">はじめに、<span class="accent">ご挨拶を。</span></h2>
     <div class="greeting-card">
       <p>遠藤さん、ご無沙汰しております。<strong>須賀井ひかる</strong>です。</p>
       <p>このたび、AIを活用したWeb制作・業務効率化のフリーランス事業（屋号：<strong>Rion &amp; Co.</strong>）を立ち上げました。</p>
-      <p>ホームページを拝見し、「未来型ハイブリッド循環型農法」というブランディング、ひまわり畑の集客、蜂蜜・野菜の販売、そして撮影ロケ地としての活用まで——<strong>幅広く挑戦されている姿勢に、大きな魅力</strong>を感じています。</p>
-      <p>同時に、<strong>農作業と販促・運営の両立は、本当に大変なはず</strong>です。本業に集中していただけるよう、私たちのスキルでお手伝いできることがあるのではと思い、ご提案をまとめました。</p>
+      <p>遠藤ファームさんのホームページ・SNSを拝見し、「未来型ハイブリッド循環型農法」というブランディング、ねぎ・大和芋・蜂蜜・ひまわり畑——<strong>これだけ多角的に挑戦されている姿に</strong>、本当にすごいなと感じました。</p>
+      <p>同時に、農作業と販促・運営の両立は、<strong>本当に大変なはず</strong>です。本業に集中していただけるよう、私たちのスキルでお手伝いできる<strong>「3つの分野」</strong>をご提案させてください。</p>
       <p>もちろん、お時間のある時にざっと目を通していただければ十分です。「いいかも」と思える部分があれば、ぜひお気軽にお声がけください。</p>
       <div class="sign">
         — 親戚として、Rion &amp; Co. として、誠意を込めて
@@ -427,13 +454,13 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- CURRENT -->
+<!-- OBSERVATION -->
 <section class="slide s-current">
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 03 / 08 —</div>
+    <div class="slide-num eng">— 03 / 09 —</div>
     <div class="slide-tag">Observation</div>
-    <h2 class="sec-title">遠藤ファームさんの<br /><span class="accent">"今"を拝見して。</span></h2>
-    <p class="sec-desc">ホームページとSNSを丁寧に拝見しました。素晴らしい点と、もう少し伸ばせそうな点が見えてきました。</p>
+    <h2 class="sec-title">ホームページとSNSを<br />拝見して<span class="accent">気づいたこと。</span></h2>
+    <p class="sec-desc">素晴らしい点と、もう少し伸ばせそうな点を、率直にまとめました。</p>
 
     <div class="cur-grid">
       <div class="cur-card shine">
@@ -451,81 +478,90 @@ a{color:inherit;text-decoration:none}
         <div class="cur-card-label">— Opportunities</div>
         <h4>もう少し伸ばせそうな点</h4>
         <ul>
-          <li>HPがやや情報過多で、商品の魅力が伝わりにくい</li>
-          <li>商品ごとの専用ページ（LP）が無く、SNS流入の受け皿が弱い</li>
-          <li>ECの売上集計・在庫管理がおそらく手作業</li>
-          <li>ふるさと納税・楽天等の販路がまだ未開拓</li>
-          <li>ひまわり畑シーズンの予約管理が電話のみ</li>
+          <li>商品ごとの「専用販売ページ」がなく、SNS流入の受け皿が弱い</li>
+          <li>ECや卸の注文集計・在庫管理がおそらく手作業で大変</li>
+          <li>SNS投稿が継続しにくく、頻度にばらつきがある</li>
+          <li>各SNSからEC・予約への動線が設計されていない</li>
+          <li>季節商品（新ねぎ・蜂蜜・ひまわり）の旬が伝わりきれていない</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OVERVIEW -->
+<!-- OVERVIEW: 3 areas -->
 <section class="slide s-overview">
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 04 / 08 —</div>
-    <div class="slide-tag">Proposal Areas</div>
-    <h2 class="sec-title">お手伝いできる、<br /><span class="accent">5つの分野。</span></h2>
-    <p class="sec-desc">どれか1つだけでも、複数組み合わせも、ご相談ベースで柔軟に対応できます。</p>
+    <div class="slide-num eng">— 04 / 09 —</div>
+    <div class="slide-tag">3 Focus Areas</div>
+    <h2 class="sec-title">お手伝いできるのは、<br /><span class="accent">この3つです。</span></h2>
+    <p class="sec-desc">どれか1つだけでも、複数組み合わせも可能です。それぞれの詳細を、次のページから順番にご説明します。</p>
 
-    <div class="areas">
-      <div class="area">
-        <div class="area-num">01</div>
-        <h4>ホームページの<br />リニューアル</h4>
-        <p>商品の魅力が一目で伝わる、現代的でモバイル対応のサイトに刷新します。</p>
+    <div class="areas-3">
+      <div class="area-big">
+        <div class="area-big-num">01</div>
+        <div class="area-big-icon">商</div>
+        <h4>商品ごとの<br />販売ページ（LP）制作</h4>
+        <p>ねぎ・蜂蜜・大和芋など、商品ごとに「魅力が伝わる専用ページ」を作ります。SNSや検索からの流入を、購入につなげる入り口になります。</p>
+        <span class="area-big-tag">売上UP</span>
       </div>
-      <div class="area">
-        <div class="area-num">02</div>
-        <h4>商品LP・<br />ECページ強化</h4>
-        <p>ねぎ・蜂蜜・ひまわり畑など、商品ごとの専用ページで購入率UP。</p>
-      </div>
-      <div class="area">
-        <div class="area-num">03</div>
+      <div class="area-big">
+        <div class="area-big-num">02</div>
+        <div class="area-big-icon">効</div>
         <h4>業務の<br />Excel自動化</h4>
-        <p>注文集計・在庫管理・売上分析をAIで自動化。事務作業を大幅削減。</p>
+        <p>EC・ポケマル・卸の注文集計、在庫管理、売上レポートをAIで自動化。事務作業の時間を大幅に削り、農作業に集中していただけます。</p>
+        <span class="area-big-tag">時短</span>
       </div>
-      <div class="area">
-        <div class="area-num">04</div>
-        <h4>新販路の<br />開拓支援</h4>
-        <p>ふるさと納税・楽天市場・Amazon出店の準備〜運用までサポート。</p>
-      </div>
-      <div class="area">
-        <div class="area-num">05</div>
+      <div class="area-big">
+        <div class="area-big-num">03</div>
+        <div class="area-big-icon">伝</div>
         <h4>SNS発信の<br />仕組み化</h4>
-        <p>AI活用で投稿テンプレ作成。続けやすい運用フローを設計します。</p>
+        <p>Instagram・X の投稿テンプレ＋運用フローを設計。AIで投稿文を量産しつつ、ファン・リピーターを増やす仕組みを作ります。</p>
+        <span class="area-big-tag">ファン化</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DETAIL 1: HP -->
+<!-- DETAIL 1: LP -->
 <section class="slide" style="background:var(--cream)">
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 05 / 08 —</div>
+    <div class="slide-num eng">— 05 / 09 —</div>
     <div class="slide-tag">Detail · 01</div>
-    <h2 class="sec-title">ホームページの<span class="accent">リニューアル</span></h2>
+    <h2 class="sec-title">商品ごとの<span class="accent">販売ページ（LP）</span></h2>
 
     <div class="detail-grid">
       <div class="detail-img">
-        <div class="detail-img-icon">家</div>
-        <div class="detail-img-tag">— Web Renewal</div>
+        <div class="detail-img-icon">商</div>
+        <div class="detail-img-tag">— Landing Page</div>
       </div>
       <div class="detail-content">
-        <h3>"伝わる" デザインで、<br />訪問者を顧客に変える。</h3>
-        <p>現状のホームページは情報がしっかり載っていますが、<strong>訪問者の最初の3秒で「ここで買いたい」と思わせる</strong>導線がやや弱い印象です。</p>
-        <p>商品写真を主役にした現代的なデザインへの刷新で、<strong>SNSからの流入も購入につなげる</strong>ことができます。</p>
+        <h3>SNSの「いいね」を、<br />購入につなげる入り口に。</h3>
+        <p>現状、SNSで商品を知ってもらえても、「買いたい」と思った人の<strong>受け皿になるページが弱い</strong>のがもったいないです。</p>
+        <p>商品ごとに「ストーリーが伝わる専用ページ」を作れば、ECサイト・ふるさと納税・卸への動線も<strong>すべてここに集約</strong>できます。</p>
         <div class="detail-list">
           <div class="detail-list-title">— 含まれる作業</div>
           <ul>
-            <li>トップページの全面リデザイン</li>
-            <li>スマートフォン対応の最適化</li>
-            <li>商品紹介・ストーリーセクション追加</li>
-            <li>SNS・EC・ふるさと納税への動線設計</li>
-            <li>SEO基本設定・お問い合わせフォーム改善</li>
+            <li>商品ストーリー・こだわりの言語化</li>
+            <li>美しい写真レイアウト＋スマホ最適化</li>
+            <li>ECサイト・ふるさと納税への購入導線</li>
+            <li>SNS共有ボタン・お問い合わせフォーム</li>
+            <li>SEO設定（検索流入の仕組み）</li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <div class="example-row">
+      <div class="example">
+        <div class="example-label">— Example A</div>
+        <strong>「熊谷ねぎ」専用LP</strong>
+        甘みの理由・農法・調理方法・産地ストーリー・お試しセット販売動線
+      </div>
+      <div class="example">
+        <div class="example-label">— Example B</div>
+        <strong>「ひまわり蜂蜜」専用LP</strong>
+        ひまわり畑×蜂蜜の循環型ストーリー・贈答用の魅力・ギフト購入導線
       </div>
     </div>
   </div>
@@ -534,7 +570,7 @@ a{color:inherit;text-decoration:none}
 <!-- DETAIL 2: 業務効率化 -->
 <section class="slide" style="background:var(--cream-2)">
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 06 / 08 —</div>
+    <div class="slide-num eng">— 06 / 09 —</div>
     <div class="slide-tag">Detail · 02</div>
     <h2 class="sec-title">業務の<span class="accent">Excel自動化</span></h2>
 
@@ -545,18 +581,75 @@ a{color:inherit;text-decoration:none}
       </div>
       <div class="detail-content">
         <h3>事務作業に時間を使わず、<br />農作業に集中していただくために。</h3>
-        <p>EC・ポケマル・卸など複数チャネルの注文を、毎日Excelに転記したり、在庫を手で調整したり——<strong>「あの作業、自動化できないかな」</strong>と思うことはありませんか？</p>
+        <p>EC・ポケマル・卸など複数チャネルの注文を、毎日Excelに転記したり、在庫を手で調整したり——<strong>「あの作業、自動化できないかな」</strong>と思う場面はありませんか？</p>
         <p>AIを使えば、ボタン1つで集計・在庫更新・レポート作成が完了する仕組みを作れます。</p>
         <div class="detail-list">
-          <div class="detail-list-title">— たとえば</div>
+          <div class="detail-list-title">— たとえばこんなこと</div>
           <ul>
             <li>各販路の注文を自動集計するシート</li>
             <li>在庫管理＋発注タイミング通知</li>
-            <li>月次売上レポート自動作成</li>
+            <li>月次・季節別の売上レポート自動作成</li>
             <li>顧客リストの整理＆リピート分析</li>
             <li>請求書・納品書の自動発行</li>
           </ul>
         </div>
+      </div>
+    </div>
+
+    <div class="example-row">
+      <div class="example">
+        <div class="example-label">— Time saved</div>
+        <strong>注文集計</strong>
+        従来：毎日30分の手作業 → 自動化後：ボタン1つ・1分で完了
+      </div>
+      <div class="example">
+        <div class="example-label">— Time saved</div>
+        <strong>月次レポート作成</strong>
+        従来：月末に2〜3時間 → 自動化後：常に最新データを表示
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAIL 3: SNS -->
+<section class="slide" style="background:var(--cream)">
+  <div class="slide-inner reveal">
+    <div class="slide-num eng">— 07 / 09 —</div>
+    <div class="slide-tag">Detail · 03</div>
+    <h2 class="sec-title">SNS発信の<span class="accent">仕組み化</span></h2>
+
+    <div class="detail-grid">
+      <div class="detail-img" style="background:linear-gradient(135deg, var(--sky), #3D6B8E);">
+        <div class="detail-img-icon" style="color:rgba(255,255,255,0.7)">伝</div>
+        <div class="detail-img-tag" style="color:rgba(255,255,255,0.85)">— Social</div>
+      </div>
+      <div class="detail-content">
+        <h3>「投稿が続かない」を、<br />解決する仕組みを。</h3>
+        <p>SNSは「続けること」が一番大変です。Instagram・X・Facebookと3つも運用されていて、本当にすごいことです。</p>
+        <p>AIを使った<strong>投稿テンプレと運用フロー</strong>を作れば、毎回ゼロから考える必要がなく、<strong>30分で1週間分の投稿が準備できる</strong>状態を目指せます。</p>
+        <div class="detail-list">
+          <div class="detail-list-title">— 含まれる作業</div>
+          <ul>
+            <li>投稿パターン10種類のテンプレ作成</li>
+            <li>AI活用での投稿文・キャプション量産</li>
+            <li>月単位の投稿カレンダー設計</li>
+            <li>Buffer等での予約投稿の仕組み構築</li>
+            <li>SNS→LP・ECへの動線設計</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="example-row">
+      <div class="example">
+        <div class="example-label">— Template</div>
+        <strong>「今日の畑から」シリーズ</strong>
+        毎週決まった構成で投稿 → 撮るだけで発信完了の仕組み
+      </div>
+      <div class="example">
+        <div class="example-label">— Template</div>
+        <strong>「商品ストーリー」シリーズ</strong>
+        ねぎ・蜂蜜・ひまわりの裏話を月替りで連載 → ファンが育つ
       </div>
     </div>
   </div>
@@ -565,10 +658,10 @@ a{color:inherit;text-decoration:none}
 <!-- PRICE -->
 <section class="slide s-price">
   <div class="slide-inner reveal">
-    <div class="slide-num eng">— 07 / 08 —</div>
+    <div class="slide-num eng">— 08 / 09 —</div>
     <div class="slide-tag">Price</div>
     <h2 class="sec-title">料金は、<span class="accent">家族価格</span>で。</h2>
-    <p class="sec-desc">親戚として、まずは「役に立つこと」を最優先で。一般のお客様向け価格の半額以下で、最初の1案件から無料お試しまで対応します。</p>
+    <p class="sec-desc">親戚として、まずは「役に立つこと」を最優先で。一般のお客様向け価格の半額以下、最初の相談は完全無料です。</p>
 
     <div class="price-card">
       <div class="price-eyebrow">— Family Special —</div>
@@ -591,7 +684,7 @@ a{color:inherit;text-decoration:none}
           <ul>
             <li>商品LP 1ページ制作</li>
             <li>Excel自動化 1案件</li>
-            <li>ふるさと納税 出品サポート</li>
+            <li>SNSテンプレ作成</li>
             <li>納品まで全てお任せ</li>
           </ul>
         </div>
@@ -599,8 +692,8 @@ a{color:inherit;text-decoration:none}
           <div class="tier-name">継続サポート</div>
           <div class="tier-price">¥30,000<span class="small">/月</span></div>
           <ul>
-            <li>HPリニューアル＋運用</li>
-            <li>SNS投稿テンプレ作成</li>
+            <li>LP制作 + Excel自動化 + SNS運用</li>
+            <li>3分野まとめてサポート</li>
             <li>毎月の売上分析レポート</li>
             <li>緊急対応も含む</li>
           </ul>
@@ -610,36 +703,10 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- WHY -->
-<section class="slide s-why">
-  <div class="slide-inner reveal">
-    <div class="slide-num eng">— 08 / 08 —</div>
-    <div class="slide-tag">Why Us</div>
-    <h2 class="sec-title">私たちにお願いいただく、<br /><span class="accent">3つの理由。</span></h2>
-
-    <div class="why-grid">
-      <div class="why">
-        <div class="why-icon">族</div>
-        <h4>親戚だからこその<br />信頼感と気軽さ</h4>
-        <p>お互いを知っている関係だからこそ、無理な営業も押し付けもありません。「相談だけ」「お試しだけ」も歓迎です。</p>
-      </div>
-      <div class="why">
-        <div class="why-icon">速</div>
-        <h4>AIを活用した<br />圧倒的なスピード</h4>
-        <p>通常1週間以上かかる作業も、AIをフル活用して数日で納品。「あ、こんなに早く出来るんだ」という体験をお届けします。</p>
-      </div>
-      <div class="why">
-        <div class="why-icon">続</div>
-        <h4>長くお付き合い<br />できる距離感</h4>
-        <p>1回きりのお取引ではなく、季節ごとの繁忙期に合わせて柔軟にサポート。「ちょっと困った」をすぐ相談できる存在を目指します。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CLOSE -->
+<!-- WHY + CLOSE COMBINED -->
 <section class="slide s-close">
   <div class="slide-inner reveal">
+    <div class="slide-num eng">— 09 / 09 —</div>
     <div class="close-eyebrow">— Closing —</div>
     <h2>ご一読いただき、<br /><span class="accent">ありがとうございました。</span></h2>
     <p>「ここの部分、もう少し詳しく知りたい」「うちの場合はどうなる？」など、どんな小さなことでも遠慮なくお聞きください。<br /><strong>まずは無料相談から、お気軽にどうぞ。</strong></p>
